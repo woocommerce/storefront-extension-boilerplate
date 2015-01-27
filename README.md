@@ -1,0 +1,1 @@
+# storefront-extension-boilerplate
