@@ -254,7 +254,7 @@ final class Storefront_Extension_Boilerplate {
 		 * See class-control-images.php
 		 */
 		$wp_customize->add_setting( 'seb_image', array(
-			'default'    		=> 'compact',
+			'default'    		=> 'option-1',
 			'sanitize_callback'	=> 'esc_attr'
 		) );
 
@@ -263,6 +263,16 @@ final class Storefront_Extension_Boilerplate {
 			'section'  => 'seb_section',
 			'settings' => 'seb_image',
 			'priority' => 10,
+		) ) );
+
+		/**
+		 * Add a divider.
+		 * Type can be set to 'text' or 'heading' to display a title or description.
+		 */
+		$wp_customize->add_control( new Arbitrary_Storefront_Control( $wp_customize, 'seb_divider', array(
+			'section'  	=> 'seb_section',
+			'type'		=> 'divider',
+			'priority' 	=> 15,
 		) ) );
 
 		/**
