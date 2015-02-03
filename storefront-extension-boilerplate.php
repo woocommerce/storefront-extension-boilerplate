@@ -104,6 +104,8 @@ final class Storefront_Extension_Boilerplate {
 		add_action( 'init', array( $this, 'seb_load_plugin_textdomain' ) );
 
 		add_action( 'init', array( $this, 'seb_setup' ) );
+
+		add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'seb_plugin_links' ) );
 	}
 
 	/**
@@ -148,6 +150,20 @@ final class Storefront_Extension_Boilerplate {
 	 */
 	public function __wakeup() {
 		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?' ), '1.0.0' );
+	}
+
+	/**
+	 * Plugin page links
+	 *
+	 * @since  1.0.0
+	 */
+	public function seb_plugin_links( $links ) {
+		$plugin_links = array(
+			'<a href="http://support.woothemes.com/">' . __( 'Support', 'storefront-extension-boilerplate' ) . '</a>',
+			'<a href="http://docs.woothemes.com/document/storefront-extension-boilerplate/">' . __( 'Docs', 'storefront-extension-boilerplate' ) . '</a>',
+		);
+
+		return array_merge( $plugin_links, $links );
 	}
 
 	/**
