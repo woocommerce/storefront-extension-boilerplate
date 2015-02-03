@@ -208,7 +208,7 @@ final class Storefront_Extension_Boilerplate {
 	public function seb_setup() {
 		$theme = wp_get_theme();
 
-		if ( 'Storefront' == $theme->name || 'storefront' == $theme->template && apply_filters( 'storefront_extension_boilerplate_enabled', true ) ) {
+		if ( 'Storefront' == $theme->name || 'storefront' == $theme->template && apply_filters( 'storefront_extension_boilerplate_supported', true ) ) {
 			add_action( 'wp_enqueue_scripts', array( $this, 'seb_styles' ), 999 );
 			add_action( 'customize_register', array( $this, 'seb_customize_register' ) );
 			add_action( 'customize_preview_init', array( $this, 'seb_customize_preview_js' ) );
@@ -287,11 +287,13 @@ final class Storefront_Extension_Boilerplate {
 		 * Add a divider.
 		 * Type can be set to 'text' or 'heading' to display a title or description.
 		 */
-		$wp_customize->add_control( new Arbitrary_Storefront_Control( $wp_customize, 'seb_divider', array(
-			'section'  	=> 'seb_section',
-			'type'		=> 'divider',
-			'priority' 	=> 15,
-		) ) );
+		if ( class_exists( 'Arbitrary_Storefront_Control' ) ) {
+			$wp_customize->add_control( new Arbitrary_Storefront_Control( $wp_customize, 'seb_divider', array(
+				'section'  	=> 'seb_section',
+				'type'		=> 'divider',
+				'priority' 	=> 15,
+			) ) );
+		}
 
 		/**
 		 * Checkbox
