@@ -19,6 +19,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
+// Sold On Woo - Start
 /**
  * Required functions
  */
@@ -30,6 +31,7 @@ if ( ! function_exists( 'woothemes_queue_update' ) ) {
  * Plugin updates
  */
 woothemes_queue_update( plugin_basename( __FILE__ ), 'FILE_ID', 'PRODUCT_ID' );
+// Sold on Woo - End
 
 /**
  * Returns the main instance of Storefront_Extension_Boilerplate to prevent the need to use globals.
