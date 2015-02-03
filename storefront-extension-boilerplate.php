@@ -29,7 +29,7 @@ if ( ! function_exists( 'woothemes_queue_update' ) ) {
 /**
  * Plugin updates
  */
-woothemes_queue_update( plugin_basename( __FILE__ ), '40c9040f4cd8d35668e9c82c6cdbe001', '518358' );
+woothemes_queue_update( plugin_basename( __FILE__ ), 'FILE_ID', 'PRODUCT_ID' );
 
 /**
  * Returns the main instance of Storefront_Extension_Boilerplate to prevent the need to use globals.
