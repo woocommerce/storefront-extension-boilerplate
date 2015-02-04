@@ -4,6 +4,8 @@
  */
 class Image_Storefront_Control extends WP_Customize_Control {
 
+	public $type = 'radio';
+
 	/**
 	* Render the content on the theme customizer page
 	*/
