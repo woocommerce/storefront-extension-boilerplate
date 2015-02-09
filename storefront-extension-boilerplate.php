@@ -250,7 +250,7 @@ final class Storefront_Extension_Boilerplate {
 		 * Custom controls
 		 * Load custom control classes
 		 */
-		require_once dirname( __FILE__ ) . '/includes/class-control-images.php';
+		require_once dirname( __FILE__ ) . '/includes/class-storefront-extension-boilerplate-images-control.php';
 
 		/**
 		 * Modify existing controls
@@ -276,7 +276,7 @@ final class Storefront_Extension_Boilerplate {
 			'sanitize_callback'	=> 'esc_attr'
 		) );
 
-		$wp_customize->add_control( new Image_Storefront_Control( $wp_customize, 'seb_image', array(
+		$wp_customize->add_control( new Storefront_Extension_Boilerplate_Images_Control( $wp_customize, 'seb_image', array(
 			'label'    => __( 'Image selector', 'storefront' ),
 			'section'  => 'seb_section',
 			'settings' => 'seb_image',
