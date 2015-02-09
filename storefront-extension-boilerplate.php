@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name:			Storefront Extension Boilerplate
- * Plugin URI:			http://woothemes.com/
- * Description:			A boilerplate plugin for creating Storefront extensions
+ * Plugin URI:			http://woothemes.com/products/storefront-extension-boilerplate/
+ * Description:			A boilerplate plugin for creating Storefront extensions.
  * Version:				1.0.0
  * Author:				WooThemes
  * Author URI:			http://woothemes.com/
