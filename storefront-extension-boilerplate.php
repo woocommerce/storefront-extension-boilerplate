@@ -183,7 +183,7 @@ final class Storefront_Extension_Boilerplate {
 		$url .= '&storefront-customizer=true';
 
 		$notices 		= get_option( 'seb_activation_notice', array() );
-		$notices[]		= sprintf( __( '%sThanks for installing the Storefront Extension Boilerplate extension. To get started, visit the %sCustomizer%s.%s %sOpen the Customizer%s', 'storefront-extension-boilerplate' ), '<p>', '<a href="' . $url . '">', '</a>', '</p>', '<p><a href="' . $url . '" class="button button-primary">', '</a></p>' );
+		$notices[]		= sprintf( __( '%sThanks for installing the Storefront Extension Boilerplate extension. To get started, visit the %sCustomizer%s.%s %sOpen the Customizer%s', 'storefront-extension-boilerplate' ), '<p>', '<a href="' . esc_url( $url ) . '">', '</a>', '</p>', '<p><a href="' . esc_url( $url ) . '" class="button button-primary">', '</a></p>' );
 
 		update_option( 'seb_activation_notice', $notices );
 	}
