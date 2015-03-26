@@ -218,6 +218,8 @@ final class Storefront_Extension_Boilerplate {
 
 			// Hide the 'More' section in the customizer
 			add_filter( 'storefront_customizer_more', '__return_false' );
+		} else {
+			add_action( 'admin_notices', array( $this, 'seb_install_storefront_notice' ) );
 		}
 	}
 
@@ -238,6 +240,19 @@ final class Storefront_Extension_Boilerplate {
 
 			delete_option( 'seb_activation_notice' );
 		}
+	}
+
+	/**
+	 * Storefront install
+	 * If the user activates the plugin while having a different parent theme active, prompt them to install Storefront.
+	 * @since   1.0.0
+	 * @return  void
+	 */
+	public function seb_install_storefront_notice() {
+		echo '<div class="updated">
+				<p>' . __( 'Storefront Extension Boilerplate requires that you use Storefront as your parent theme.', 'storefront-extension-boilerplate' ) . '</p>
+				<a href="' . esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-theme&theme=storefront' ), 'install-theme_boutique' ) ) .'" class="button">' . __( 'Install Storefront now', 'storefront-extension-boilerplate' ) . '</a></p>
+			</div>';
 	}
 
 	/**
