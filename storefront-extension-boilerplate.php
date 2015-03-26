@@ -250,8 +250,7 @@ final class Storefront_Extension_Boilerplate {
 	 */
 	public function seb_install_storefront_notice() {
 		echo '<div class="updated">
-				<p>' . __( 'Storefront Extension Boilerplate requires that you use Storefront as your parent theme.', 'storefront-extension-boilerplate' ) . '</p>
-				<a href="' . esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-theme&theme=storefront' ), 'install-theme_boutique' ) ) .'" class="button">' . __( 'Install Storefront now', 'storefront-extension-boilerplate' ) . '</a></p>
+				<p>' . __( 'Storefront Extension Boilerplate requires that you use Storefront as your parent theme.', 'storefront-extension-boilerplate' ) . ' <a href="' . esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-theme&theme=storefront' ), 'install-theme_boutique' ) ) .'">' . __( 'Install Storefront now', 'storefront-extension-boilerplate' ) . '</a></p>
 			</div>';
 	}
 
