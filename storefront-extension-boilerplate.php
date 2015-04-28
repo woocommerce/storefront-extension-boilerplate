@@ -235,7 +235,7 @@ final class Storefront_Extension_Boilerplate {
 		if ( $notices = get_option( 'seb_activation_notice' ) ) {
 
 			foreach ( $notices as $notice ) {
-				echo '<div class="updated">' . $notice . '</div>';
+				echo '<div class="notice is-dismissible updated">' . $notice . '</div>';
 			}
 
 			delete_option( 'seb_activation_notice' );
@@ -249,7 +249,7 @@ final class Storefront_Extension_Boilerplate {
 	 * @return  void
 	 */
 	public function seb_install_storefront_notice() {
-		echo '<div class="updated">
+		echo '<div class="notice is-dismissible updated">
 				<p>' . __( 'Storefront Extension Boilerplate requires that you use Storefront as your parent theme.', 'storefront-extension-boilerplate' ) . ' <a href="' . esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-theme&theme=storefront' ), 'install-theme_boutique' ) ) .'">' . __( 'Install Storefront now', 'storefront-extension-boilerplate' ) . '</a></p>
 			</div>';
 	}
