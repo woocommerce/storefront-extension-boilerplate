@@ -206,9 +206,8 @@ final class Storefront_Extension_Boilerplate {
 	 * @return void
 	 */
 	public function seb_setup() {
-		$theme = wp_get_theme();
 
-		if ( 'Storefront' == $theme->name || 'storefront' == $theme->template && apply_filters( 'storefront_extension_boilerplate_supported', true ) ) {
+		if ( 'storefront' == get_option( 'template' ) && apply_filters( 'storefront_extension_boilerplate_supported', true ) ) {
 			add_action( 'wp_enqueue_scripts', array( $this, 'seb_styles' ), 999 );
 			add_action( 'customize_register', array( $this, 'seb_customize_register' ) );
 			add_action( 'customize_preview_init', array( $this, 'seb_customize_preview_js' ) );
